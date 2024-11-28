@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    # リポジトリのルートに対する相対的なパッケージマネージャーのディレクトリ
+    directory: "/"
+    schedule:
+      # 毎週月曜日にバージョンを確認
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 10
+    target-branch: "main"
+    ignore: # メジャーアップデートは無視する
+      - dependency-name: "*"
+        update-types: [ "version-update:semver-major" ]
+    commit-message:
+      # commit messageのprefixを設定
+      prefix: "npm"
+    # PRのラベルを作成
+    labels:
+      - "npm"
+      - "dependencies"

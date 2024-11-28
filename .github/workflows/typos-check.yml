@@ -1,0 +1,19 @@
+name: Typos check
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches: main
+defaults:
+  run:
+    shell: bash
+jobs:
+  pr-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Typoをチェックする
+      - name: Run Typos
+        uses: crate-ci/typos@master
