@@ -3,6 +3,7 @@
 
 ## assign_auto
 PR作成者を自動アサインする
+dependabotの作成したPRはエラーとなるため、誰かをアサインするように変更した方が良い
 
 ## dependabot-patch-automerge
 dependabotの作成したPRがpatchであれば自動でマージする
