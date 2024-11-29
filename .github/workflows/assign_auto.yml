@@ -11,6 +11,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - run: cat $GITHUB_EVENT_PATH
+      # dependabotの場合はerrorになるので誰かメンバーをアサインするようにした方が良い
       - run: gh pr edit $NUMBER --add-assignee $ASSIGNEE
         env:
           GH_TOKEN: ${{ github.token }}
